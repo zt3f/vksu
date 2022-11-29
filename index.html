@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Dagens facilitator</title>
         <meta property="og:title" content="Dagens facilitator:">
-        <meta property="og:description" content="Du!">
+        <meta property="og:description" content="javascript:getFacilitator();">
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
         <meta http-equiv="Pragma" content="no-cache">
         <meta http-equiv="Expires" content="0">
@@ -14,7 +14,9 @@
         <h1>Vem är dagens facilitator?</h1>
         <h1>Du!</h1>
         <script>
-           document.getElementsByTagName('meta')["og:description"].content = "Jag!";
+            function getFacilitator() {
+                return "Jag!";
+            }
         </script>
     </body>
 </html>
