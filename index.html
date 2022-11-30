@@ -2,19 +2,57 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Dagens facilitator</title>
-        <meta property="og:title" content="Dagens facilitator:">
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
         <meta http-equiv="Pragma" content="no-cache">
         <meta http-equiv="Expires" content="0">
+        <meta property="og:title" content="Dagens facilitator:">
+        <title>Dagens facilitator</title>
     </head>
     <body>
         <em>Svaret på frågan alla undrar</em>
         <h1>Vem är dagens facilitator?</h1>
-        <h1>Du!</h1>
+        <h1 id="facilitator"></h1>
+        <strong>Kom ihåg att med stor makt kommer stort ansvar!</strong>
         <script>
             $(document).ready(function() {
-                $("head").append('<meta property="og:description" content="Jag!">');
+                const millisPerDay = 8.64e7;
+                const daysSinceEpoch = Math.floor(Date.now() / millisPerDay);
+                const daysSinceFirstMondayAfterEpoch = daysSinceEpoch - 4;
+                const weekDaysSinceFirstMondayAfterEpoch -= Math.floor(daysSinceFirstMondayAfterEpoch / 7) * 2;
+
+                let facilitator;
+                switch (weekDaysSinceFirstMondayAfterEpoch % 8) {
+                    case 0:
+                        facilitator = "Andrea";
+                        break;
+                    case 1:
+                        facilitator = "Bo";
+                        break;
+                    case 2:
+                        facilitator = "David";
+                        break;
+                    case 3:
+                        facilitator = "Hanna";
+                        break;
+                    case 4:
+                        facilitator = "Jonas";
+                        break;
+                    case 5:
+                        facilitator = "Lovisa";
+                        break;
+                    case 6:
+                        facilitator = "Patrik";
+                        break;
+                    case 7:
+                        facilitator = "Stefan";
+                        break;
+                    default:
+                        facilitator = "ERROR!";
+                        break;
+                }
+
+                $("head").append('<meta property="og:description" content="' + facilitator + '! :gavel:">');
+                $("#facilitator").text("Ingen mindre än " + facilitator + "! Hallelujah!");
             });
         </script>
     </body>
