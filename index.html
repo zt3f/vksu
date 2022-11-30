@@ -25,34 +25,42 @@
                 switch (weekDaysSinceFirstMondayAfterEpoch % 8) {
                     case 0:
                         facilitator = "Andrea";
+                        $("head").append('<meta property="og:description" content="Andrea! :gavel:">');
                         break;
                     case 1:
                         facilitator = "Bo";
+                        $("head").append('<meta property="og:description" content="Bo! :gavel:">');
                         break;
                     case 2:
                         facilitator = "David";
+                        $("head").append('<meta property="og:description" content="David! :gavel:">');
                         break;
                     case 3:
                         facilitator = "Hanna";
+                        $("head").append('<meta property="og:description" content="Hanna! :gavel:">');
                         break;
                     case 4:
                         facilitator = "Jonas";
+                        $("head").append('<meta property="og:description" content="Jonas! :gavel:">');
                         break;
                     case 5:
                         facilitator = "Lovisa";
+                        $("head").append('<meta property="og:description" content="Lovisa! :gavel:">');
                         break;
                     case 6:
                         facilitator = "Patrik";
+                        $("head").append('<meta property="og:description" content="Patrik! :gavel:">');
                         break;
                     case 7:
                         facilitator = "Stefan";
+                        $("head").append('<meta property="og:description" content="Stefan! :gavel:">');
                         break;
                     default:
-                        facilitator = "ERROR!";
+                        facilitator = "ERROR";
+                        $("head").append('<meta property="og:description" content="ERROR!">');
                         break;
                 }
 
-                $("head").append('<meta property="og:description" content="' + facilitator + '! :gavel:">');
                 $("#facilitator").text("Ingen mindre än " + facilitator + "! Hallelujah!");
             });
         </script>
