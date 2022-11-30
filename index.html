@@ -18,7 +18,7 @@
                 const millisPerDay = 8.64e7;
                 const daysSinceEpoch = Math.floor(Date.now() / millisPerDay);
                 const daysSinceFirstMondayAfterEpoch = daysSinceEpoch - 4;
-                const weekDaysSinceFirstMondayAfterEpoch -= Math.floor(daysSinceFirstMondayAfterEpoch / 7) * 2;
+                const weekDaysSinceFirstMondayAfterEpoch = daysSinceFirstMondayAfterEpoch - Math.floor(daysSinceFirstMondayAfterEpoch / 7) * 2;
 
                 let facilitator;
                 switch (weekDaysSinceFirstMondayAfterEpoch % 8) {
