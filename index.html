@@ -52,11 +52,11 @@
                         break;
                 }
 
-                let description = '<meta property="og:description" content="';
-                description += facilitator;
-                description += '! :gavel:">';
-                $("head").append(description);
                 $("#facilitator").text("Ingen mindre än " + facilitator + "! Hallelujah!");
+                const description = document.createElement("meta");
+                description.setAttribute("property", "og:description");
+                description.setAttribute("content", facilitator + "! :gavel:");
+                document.getElementsByTagName('head')[0].appendChild(description);
             });
         </script>
     </body>
