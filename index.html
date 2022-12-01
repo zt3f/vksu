@@ -15,47 +15,44 @@
         <h1 id="facilitator"></h1>
         <strong>Kom ihåg att med stor makt kommer stort ansvar!</strong>
         <script>
-            function setFacilitator(facilitator) {
-                $("head").append(`<meta property="og:description" content="${facilitator}! :gavel:">`);
-                $("#facilitator").text(`Ingen mindre än ${facilitator}! Hallelujah!`);
-            }
-
             $(document).ready(function() {
                 const millisPerDay = 8.64e7;
                 const daysSinceEpoch = Math.floor(Date.now() / millisPerDay);
                 const daysSinceFirstMondayAfterEpoch = daysSinceEpoch - 4;
                 const weekDaysSinceFirstMondayAfterEpoch = daysSinceFirstMondayAfterEpoch - Math.floor(daysSinceFirstMondayAfterEpoch / 7) * 2;
 
-                let facilitator;
                 switch (weekDaysSinceFirstMondayAfterEpoch % 8) {
                     case 0:
-                        setFacilitator("Andrea");
+                        facilitator = "Andrea";
                         break;
                     case 1:
-                        setFacilitator("Bo");
+                        facilitator = "Bo";
                         break;
                     case 2:
-                        setFacilitator("David");
+                        facilitator = "David";
                         break;
                     case 3:
-                        setFacilitator("Hanna");
+                        facilitator = "Hanna";
                         break;
                     case 4:
-                        setFacilitator("Jonas");
+                        facilitator = "Jonas";
                         break;
                     case 5:
-                        setFacilitator("Lovisa");
+                        facilitator = "Lovisa";
                         break;
                     case 6:
-                        setFacilitator("Patrik");
+                        facilitator = "Patrik";
                         break;
                     case 7:
-                        setFacilitator("Stefan");
+                        facilitator = "Stefan";
                         break;
                     default:
-                        setFacilitator("ERROR");
+                        facilitator = "ERROR";
                         break;
                 }
+
+                $("head").append("<meta property=&quot;og:description&quot; content=&quot;" + facilitator + "! :gavel:&quot;>");
+                $("#facilitator").text(`Ingen mindre än ${facilitator}! Hallelujah!`);
             });
         </script>
     </body>
